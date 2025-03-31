@@ -27,15 +27,15 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
               <Link href="/donate" className="transition-colors hover:text-foreground/80">
                 Donate
               </Link>
-              <Link href="/emergency" className="text-red-500 font-bold">
+              <Link href="/emergency-request" className="text-red-500 font-bold">
                 Emergency
               </Link>
             </nav>
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <div className="w-full flex-1 md:w-auto md:flex-none">
-              <Button variant="outline" className="hidden md:flex">
-                Register as Donor
+              <Button variant="outline" className="hidden md:flex" asChild>
+                <Link href="/donate">Register as Donor</Link>
               </Button>
             </div>
             <Button
@@ -71,12 +71,14 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 Donate
               </Link>
               <Link
-                href="/emergency"
+                href="/emergency-request"
                 className="flex w-full items-center rounded-md p-2 text-red-500 font-bold"
               >
                 Emergency
               </Link>
-              <Button className="mt-4">Register as Donor</Button>
+              <Button className="mt-4" asChild>
+                <Link href="/donate">Register as Donor</Link>
+              </Button>
             </nav>
           </div>
         </div>
